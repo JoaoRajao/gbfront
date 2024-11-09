@@ -1,31 +1,30 @@
-import React from 'react';
-import Link from 'next/link';
-import { Button } from "@/components/ui/button"; // Assumindo que você tenha um componente Button no ShadCN
-import Image from 'next/image';
-import logo from '/public/assets/images/logo.png'; // Assumindo que o logo está em /public/assets/images
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import logo from "/public/assets/images/logo.png"; // Caminho do logo
 
-const Header = () => {
+export default function Header() {
   return (
-    <header className="flex items-center justify-between px-4 py-3 bg-gray-900 text-white shadow-md">
-      
-      <div className="flex items-center">
-        <Link href="/">
-          <Image src={logo} alt="Logo" width={40} height={40} className="mr-2" />
+    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <header className="flex h-20 w-full items-center px-4 md:px-6 bg-gray-900 text-white shadow-md">
+        {/* Logo */}
+        <Link href="/" className="flex items-center mr-6" prefetch={false}>
+          <Image src={logo} alt="Gracie Barra Logo" width={40} height={40} />
+          <span className="ml-2 text-red-600 font-bold text-lg hidden lg:block">Gracie Barra</span>
         </Link>
-        <span className="font-bold text-lg text-red-600">Gracie Barra</span>
-      </div>
 
-      <nav className="flex items-center space-x-6">
-        <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
-        <Link href="#about" className="hover:text-red-600 transition-colors">Sobre</Link>
-        <Link href="#class" className="hover:text-red-600 transition-colors">Aulas</Link>
-        <Link href="#contact" className="hover:text-red-600 transition-colors">Contato</Link>
-        <Link href="/login">
-          <Button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-md">Login</Button>
-        </Link>
-      </nav>
-    </header>
+        {/* Navegação */}
+        <nav className="ml-auto flex items-center gap-4">
+          <Link href="/" className="nav-link">Home</Link>
+          <Link href="#about" className="nav-link">About</Link>
+   
+          <Link href="#contact" className="nav-link">Contact</Link>
+
+          {/* Botões de Login e Cadastro */}
+          <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Sign in</Button>
+          <Button className="bg-red-600 hover:bg-red-700 text-white">Sign Up</Button>
+        </nav>
+      </header>
+    </div>
   );
-};
-
-export default Header;
+}

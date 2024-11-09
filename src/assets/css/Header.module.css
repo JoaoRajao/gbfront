@@ -147,3 +147,16 @@
     }
   }
   
+  /* Estilos para os links de navegação */
+.nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: medium;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #f87171; /* vermelho mais claro no hover */
+    background-color: rgba(255, 255, 255, 0.1); /* fundo claro no hover */
+  }
+  
