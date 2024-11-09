@@ -15,7 +15,7 @@ const CustomerReviews = () => {
     try {
       const data = await listarAvaliacoes();
       setReviews(data);
-    } catch (err) {
+    } catch {
       setError('Erro ao carregar avaliações.');
     }
   };
@@ -30,7 +30,7 @@ const CustomerReviews = () => {
       await criarAvaliacao(newReview);
       fetchReviews();
       setNewReview({ rating: 0, comment: '', email: '' });
-    } catch (err) {
+    } catch {
       setError('Erro ao enviar a avaliação.');
     }
   };
@@ -46,7 +46,7 @@ const CustomerReviews = () => {
       await atualizarAvaliacao(selectedReview.id, selectedReview);
       fetchReviews();
       setEditModalOpen(false);
-    } catch (err) {
+    } catch {
       setError('Erro ao atualizar a avaliação.');
     }
   };
@@ -55,7 +55,7 @@ const CustomerReviews = () => {
     try {
       await excluirAvaliacao(id);
       fetchReviews();
-    } catch (err) {
+    } catch {
       setError('Erro ao excluir a avaliação.');
     }
   };
