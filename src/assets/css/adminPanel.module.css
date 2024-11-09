@@ -1,0 +1,88 @@
+
+
+.welcomeMessage {
+    font-size: 1.2em;
+    color: #333; /* Texto preto */
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Container dos cards */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos dos cards individuais */
+.menuItem {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0; /* Borda leve */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menuItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+}
+
+/* Ícones nos cards */
+.menuItem i {
+    font-size: 2.5em;
+    color: #c10000; /* Ícone vermelho */
+    margin-bottom: 15px;
+}
+
+/* Título dos cards */
+.menuItem h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333; /* Texto preto */
+}
+
+/* Descrição dos cards */
+.menuItem p {
+    color: #666; /* Texto cinza */
+    margin-bottom: 20px;
+}
+
+/* Botão nos cards */
+.btn {
+    display: inline-block;
+    background-color: #c10000; /* Botão vermelho */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a80000; /* Cor mais escura no hover */
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menuItem {
+        width: 90%;
+    }
+}
