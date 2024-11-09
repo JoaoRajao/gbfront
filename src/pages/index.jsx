@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import styles from '../assets/css/index.module.css'; // Defina seus estilos específicos da página em HomePage.module.css
+import Header from '../components/Header'; // Certifique-se de que o caminho está correto
+import Footer from '../components/Footer'; // Supondo que você tenha um Footer também
+import styles from '../assets/css/index.module.css'; 
 
 const HomePage = () => {
   const workoutSchedule = {
@@ -27,7 +27,8 @@ const HomePage = () => {
         />
       </Head>
 
-      
+      {/* Importa o Header no topo da página */}
+      <Header />
 
       <main className={styles.main}>
         {/* HERO Section */}
@@ -102,7 +103,8 @@ const HomePage = () => {
         </section>
       </main>
 
-     
+      {/* Importa o Footer no final da página */}
+      <Footer />
     </>
   );
 };

@@ -1,0 +1,149 @@
+/* Estilo do container do cabeçalho */
+.header {
+    background-color: #151c23;
+    color: #fff;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .span {
+    color: #c10000; /* Cor vermelha da marca */
+  }
+  
+  /* Navbar e links */
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+  }
+  
+  .navbar-link:hover,
+  .navbar-link.active {
+    color: #c10000;
+  }
+  
+  /* Botão de login */
+  .btn-login {
+    background-color: #c10000;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-login:hover {
+    background-color: #a80000;
+  }
+  
+  /* Botões de abertura e fechamento do menu (mobile) */
+  .nav-open-btn,
+  .nav-close-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-open-btn .line,
+  .nav-close-btn svg {
+    fill: #fff;
+  }
+  
+  .nav-open-btn .line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      background-color: #151c23;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 60px 20px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+  
+    /* Mostra o botão de abrir menu no mobile */
+    .nav-open-btn {
+      display: block;
+    }
+  
+    /* Fecha o menu ao clicar no botão */
+    .nav-close-btn {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  
+    /* Navbar em tela cheia */
+    .navbar-list {
+      flex-direction: column;
+      width: 100%;
+      gap: 15px;
+    }
+  
+    .navbar-link {
+      font-size: 1.2em;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
